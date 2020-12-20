@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="/css/master.css"> -->
+    <title>Guild Payment UI</title>
+  </head>
+  <body>
+    <img src="images/Logo.png" alt="Guild Logo" id='logo' class='images'>
+    <br>
+    <!-- <h1>Guild Payment UI</h1> -->
+    <!-- <button type="button" name="button" onclick="Pause()">Submit Info</button> -->
+    <!-- 1)select input value from form using id,  -->
+    <!-- 2)store as variable in javascript! -->
+
+    <br>
+    <br>
+    <br>
+
+
+
+    <!-- type = the type of form, text, checklist, etc.. -->
+    <!-- the for attribute of the label tag should equal the id attribute of the input tag -->
+    <!-- need to link form action to a form handler >><form action="/action_page.php"> -->
+    <!-- each input element requies a 'name' attribute -->
+
+    <!-- <form class="" action="index.html" method="post">
+      <fieldset>
+
+        <label for="check">Check Amount: </label><br>
+        <input type="number" name="" value="" id='check'>
+      <fieldset>
+    </form>
+    <br> -->
+    <form class="" action="index.html" method="post">
+      <fieldset>
+        <legend>Client Info</legend>
+        <br>
+        <label for="">Client Name:</label>
+        <input type="text" name="" value="" id='client_name'><br><br>
+        <label for="">Check Amount:</label>
+        <input type="number" name="" value="" id="check_amount">
+
+      </fieldset>
+      <br>
+      <br>
+
+    </form>
+
+    <form class="" action="index.html" method="post">
+      <fieldset>
+        <legend>Contractor Info</legend>
+        <br>
+        <!-- <label for="">Contractor Name:</label>
+        <input type="text" name="" value="" ><br><br> -->
+        <label for="">Payment Amount:</label>
+        <input type="number" name="" value="" id="contractor_payment">
+
+      </fieldset>
+      <br>
+      <br>
+
+    </form>
+
+    <form class="" action="index.html" method="post">
+      <fieldset>
+        <legend>Food/Props</legend>
+        <br>
+
+        <label for="">Allocation Amount:</label>
+        <input type="text" name="" value="" id="food_allocation">
+
+      </fieldset>
+      <br>
+      <br>
+
+    </form>
+
+
+    <form class="" >
+      <fieldset>
+        <!-- for attribute of label should make id of input -->
+        <br>
+        <legend for="name">Cast</legend>
+
+        <input type="checkbox" id="Justin_Cast" name="Justin" class='cast'>
+        <label for="Justin_Cast">Justin Gordon</label><br>
+
+        <input type="checkbox" id="Mariah_Cast" name="Mariah" class='cast'>
+        <label for="Mariah_Cast">Mariah Smith</label><br>
+
+        <input type="checkbox" id="Mikhaella_Cast" name="Mimi" class='cast' >
+        <label for="Mimi_Cast">Mikhaella Norwood</label><br>
+
+        <input type="checkbox" id="Darius_Cast" name="Darius" class='cast' >
+        <label for="Darius_Cast">Darius Simpson</label><br>
+
+        <input type="checkbox" id="Candace_Cast" name="Candace" class='cast'>
+        <label for="Candace_Cast">Candace Curtis</label><br>
+
+        <input type="checkbox" id="Mercedes_Cast" name="Mercedes" class='cast'>
+        <label for="Mercedes_Cast">Mercedes Pergande</label><br>
+
+        <input type="checkbox" id="William_Cast" name="William" class='cast'>
+        <label for="William Royster_Cast">William Royster</label><br>
+
+        <br>
+        <br>
+
+
+      </fieldset>
+
+    </form>
+    <br>
+    <br>
+      <button type="button" name="button" onclick="LoadReport()">Load Report</button>
+
+
+
+
+
+    <style media="screen">
+
+      #logo{
+          justify-content: center;
+
+          width: 150px;
+          height: 50px;
+          ba
+
+
+      }
+
+
+    </style>
+
+    <script type="text/javascript">
+
+
+
+      //declare variable by using 'var' or 'let'
+      var cars =["van","mini van",'truck'];
+      var Justin = document.getElementById('Justin_Cast')
+
+      //declare funtion using 'function'
+      function add(a,b){
+          return a+b;
+      }
+
+      // use console.log to see on console
+      console.log(add(3,5));
+
+      // initialize for loop
+      for(i=0; i<cars.length ;i++ ){
+
+        console.log(cars[i]);
+      }
+
+      // SELECTORS
+      //write on HTML document
+      //document.write('ello!')
+
+      // change inner html https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+    //  document.querySelector('h1').innerHTML= "Hello Now";
+
+      //change attribute https://www.w3schools.com/jsref/met_element_setattribute.asp
+      //document.querySelector('h1').style.backgroundColor = "red";
+
+      var casted=document.getElementById('Justin_Cast');
+      // events
+      var chris=5;
+      function Pause(){
+        // give the page an alert
+        alert('Hi lil Bee One Tru Baby Bun!')
+      }
+
+      // Javascript Classes https://www.w3schools.com/js/js_classes.asp
+
+      class employee{
+
+          constructor(first_name,last_name){
+
+            this.first_name=first_name;
+
+            this.last_name=last_name;
+
+
+          }
+
+      }
+
+      var employ_1=new employee('Jake','Shields');
+
+
+
+      function LoadReport(){
+
+        var check_amount=document.getElementById('check_amount').value;
+        var contractor_amount=document.getElementById('contractor_payment').value;
+        var allocation_amount=document.getElementById('food_allocation').value;
+
+// #Sum over cast
+
+        // cast list final number (will be looped through)
+        var cast_count=0;
+
+        // cast list html elements in an array
+        var cast_list = document.getElementsByClassName('cast');
+
+        // list of cast members wtih checked box
+        var cast_final=[];
+
+        for(i=0;i<cast_list.length;i++){
+
+          if (cast_list[i].checked == true){
+            console.log(cast_list[i].checked);
+            cast_count+=1;
+            cast_final.push(cast_list[i]);
+
+          }
+        }
+        console.log("" + cast_count+" checks!");
+        // console.log(cast_final[0].name);
+        console.log("The Check Amount is" + check_amount +" !");
+        console.log("The Contractor Amount is" + contractor_amount +" !");
+        console.log("The Allocation Amount is" + allocation_amount +" !");
+
+        var remainder=check_amount-contractor_amount-allocation_amount;
+
+        if (check_amount>=500){
+
+          var artist_pay=remainder*.35;
+          var director_pay=remainder*.15/2;
+          var account=remainder*.4;
+          var debt=.1;
+
+        }
+
+        else{
+
+          var artist_pay=remainder*.50;
+          var director_pay= remainder*.25/2;
+          var account=.25*remainder;
+
+        }
+
+        var artist_payment=artist_pay/cast_count;
+
+        console.log(artist_payment);
+        alert("Artist: " + artist_payment + " Directors: "+ director_pay);
+      }
+
+
+
+
+
+    </script>
+
+  </body>
+</html>
